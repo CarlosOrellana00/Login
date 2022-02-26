@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::resource('usuarios', 'UsuarioController');
+// Route::resource('login','LoginController');
+
+Route::get('/login','LoginController@index')->name('login');
+
+Route::post('/login','LoginController@login')->name('login');
